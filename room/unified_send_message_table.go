@@ -248,7 +248,7 @@ func (this *UnifiedSendMessageTable) ExecuteCallBackMsg() {
 				for _, sessionId := range msg.players {
 					for _, role := range this.tableimp.GetSeats() {
 						if role != nil {
-							if (role.Session().GetSessionid() == sessionId) && (role.Session() != nil) {
+							if (role.Session() != nil) && (role.Session().GetSessionid() == sessionId) {
 								netBroken, _ := role.GetNetBroken()
 								if !netBroken {
 									var e string=""
